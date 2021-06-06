@@ -27,20 +27,6 @@ if (Test-Path($ChocolateyProfile)) {
   Import-Module "$ChocolateyProfile"
 }
 
-function RunPresentationWatch {
-    Write-Host "cd" $repos.presentation -foregroundcolor "cyan"
-    cd $repos.presentation;
-    Write-Host "npm run watch" -foregroundcolor "cyan"
-    npm run watch;
-}
-
-function RunPresentationTestWatch {
-    Write-Host "cd" $repos.presentation -foregroundcolor "cyan"
-    cd $repos.presentation;
-    Write-Host "npm run test --watch" -foregroundcolor "cyan"
-    npm run test --watch
-}
-
 function RunNpmListGlobal() {
     npm list -g --depth=0
 }
@@ -49,7 +35,5 @@ function RunNpmList() {
     npm list --depth=0
 }
 
-Set-Alias watch RunPresentationWatch
-Set-Alias testWatch RunPresentationTestWatch 
 Set-Alias ng RunNpmListGlobal
 Set-Alias nl RunNpmList
